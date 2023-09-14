@@ -31,7 +31,7 @@ Route::get('/dashboard', function () {
 
 
 Route::get('/clients', function () {
-    $clients = Client::paginate(3); // You can specify the number of clients per page (e.g., 10 per page)
+    $clients = Client::paginate(8); // You can specify the number of clients per page (e.g., 10 per page)
     return Inertia::render('Clients', ['clients' => $clients]);
 })->name('clients');
 

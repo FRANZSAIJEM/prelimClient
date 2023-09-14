@@ -27,30 +27,41 @@ import { Head } from '@inertiajs/vue3';
             </div>
         </div>
 
-        <div class="mt-4 flex justify-between items-center" >
-            <div class="flex items-center space-x-2" style="transform: translateY(-20px) translateX(45px);">
-                <span v-if="clients.prev_page_url">
-                    <a
-                        :href="clients.prev_page_url"
-                        @click.prevent="$inertia.visit(clients.prev_page_url)"
-                        class="text-sm font-medium text-gray-100 p-5 bg-gray-900 rounded-md hover:bg-gray-300"
-                    >
-                        Previous
-                    </a>
-                </span>
+        <div class="mt-4 flex justify-between items-center">
+    <div class="flex items-center space-x-2" style="transform: translateY(-20px) translateX(45px);">
+        <span v-if="clients.prev_page_url">
+            <a
+                :href="clients.prev_page_url"
+                @click.prevent="$inertia.visit(clients.prev_page_url)"
+                class="text-sm font-medium text-gray-100 p-5 bg-gray-900 rounded-md hover:bg-gray-300"
+            >
+                Previous
+            </a>
+        </span>
 
-                <!-- Next Page Link -->
-                <span v-if="clients.next_page_url">
-                    <a
-                        :href="clients.next_page_url"
-                        @click.prevent="$inertia.visit(clients.next_page_url)"
-                        class="text-sm font-medium text-gray-100 p-5 bg-gray-900 rounded-md hover:bg-gray-300"
-                    >
-                        Next
-                    </a>
-                </span>
-            </div>
+        <!-- Numbered Links Pagination -->
+        <template v-if="clients.last_page > 1">
+            <span v-for="page in clients.last_page" :key="page">
+                <a
+                    :href="'/clients?page=' + page"
+                    @click.prevent="$inertia.visit('/clients?page=' + page)"
+                    class="text-sm font-medium text-gray-100 p-5 bg-gray-900 rounded-md hover:bg-gray-300"
+                >
+                    {{ page }}
+                </a>
+            </span>
+        </template>
 
+        <span v-if="clients.next_page_url">
+            <a
+                :href="clients.next_page_url"
+                @click.prevent="$inertia.visit(clients.next_page_url)"
+                class="text-sm font-medium text-gray-100 p-5 bg-gray-900 rounded-md hover:bg-gray-300"
+            >
+                Next
+            </a>
+        </span>
+    </div>
 </div>
 
     </Layout>

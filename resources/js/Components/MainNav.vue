@@ -14,12 +14,7 @@ const {hidden} = defineProps (['hidden'])
         <Link :href="route('clients')" :active="route().current('clients')">
             <i class="fa-solid fa-users"></i> <span :hidden="hidden">Clients</span>
         </Link>
-        <Link :href="route('profile.edit')" :active="route().current('clients')">
-            <i class="fa-solid fa-user"></i> <span :hidden="hidden">Profile</span>
-        </Link>
-        <Link :href="route('logout')" method="post" >
-            <i class="fa-solid fa-right-from-bracket"></i> <span :hidden="hidden">Logout</span>
-        </Link>
+
 
     </div>
 

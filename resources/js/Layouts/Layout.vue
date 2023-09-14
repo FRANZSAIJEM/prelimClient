@@ -27,7 +27,7 @@
         <div id="branding" :hidden="hide">
             <img src="https://cdn-icons-png.flaticon.com/512/3135/3135715.png" alt="User Logo"
                 class="w-[170px] h-[170px] mx-auto rounded-full object-cover">
-            <h1 class="my-6 text-3xl text-center text-white">Francis Michael Mejias</h1>
+            <h1 class="my-6 text-3xl text-center text-white">Your Name</h1>
 
         </div>
         <hr class="border-gray-600" :hidden="hide">
